@@ -13,6 +13,18 @@
             return choices[theChoice];
         };
         
+        function getHumanChoice () {
+            let answer = prompt("Write Rock, Paper or Scissors");
+            answer = answer.toLowerCase();
+            
+            if(answer === 'rock' || answer === 'paper' || answer === 'scissors'){
+                return answer;
+            }else{
+                getHumanChoice();
+            }
+
+        };
+        
     </script>
 </body>
 </html>
