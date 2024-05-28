@@ -22,9 +22,27 @@
             }else{
                 getHumanChoice();
             }
-
         };
-        
+
+        let humanScore = 0;
+        let computerScore = 0;
+
+        function playRound(humanChoice, computerChoice){
+            if((humanChoice === 'rock' && computerChoice === 'scissors') ||
+            (humanChoice === 'paper' && computerChoice === 'rock') ||
+            (humanChoice === 'scissors' && computerChoice === 'paper')){
+                humanScore++;
+                console.log('You Win!');
+            }else if(humanChoice === computerChoice){
+                console.log(`It's a tie!`);
+            }else{
+                computerScore++;
+                console.log('Computer wins!');
+            }
+        };
+
+
+
     </script>
 </body>
 </html>
