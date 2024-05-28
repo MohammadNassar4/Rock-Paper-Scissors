@@ -24,25 +24,41 @@
             }
         };
 
-        let humanScore = 0;
-        let computerScore = 0;
 
-        function playRound(humanChoice, computerChoice){
-            if((humanChoice === 'rock' && computerChoice === 'scissors') ||
-            (humanChoice === 'paper' && computerChoice === 'rock') ||
-            (humanChoice === 'scissors' && computerChoice === 'paper')){
-                humanScore++;
-                console.log('You Win!');
-            }else if(humanChoice === computerChoice){
-                console.log(`It's a tie!`);
-            }else{
-                computerScore++;
-                console.log('Computer wins!');
-            }
+
+        function playGame(){
+
+            let humanScore = 0;
+            let computerScore = 0;
+
+            function playRound(humanChoice, computerChoice){
+                if((humanChoice === 'rock' && computerChoice === 'scissors') ||
+                (humanChoice === 'paper' && computerChoice === 'rock') ||
+                (humanChoice === 'scissors' && computerChoice === 'paper')){
+                    humanScore++;
+                    console.log('You Win!');
+                }else if(humanChoice === computerChoice){
+                    console.log(`It's a tie!`);
+                }else{
+                    computerScore++;
+                    console.log('Computer wins!');
+                }
         };
 
+        for(i = 0; i < 5; i++){
+            playRound(getHumanChoice(), getComputerChoice());
+        }
 
+        if(humanScore == computerScore){
+            console.log("The Game Is Tie!");
+        }else if(humanScore > computerScore){
+            console.log("!Congratulations! You Won The Game!");
+        }else{
+            console.log("Good Luck You Lost The Game!");
+        }
 
+        };
+        playGame();
     </script>
 </body>
 </html>
