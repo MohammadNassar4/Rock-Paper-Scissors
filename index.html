@@ -26,8 +26,6 @@
 
 
 
-        function playGame(){
-
             let humanScore = 0;
             let computerScore = 0;
 
@@ -43,22 +41,55 @@
                     computerScore++;
                     console.log('Computer wins!');
                 }
-        };
+            };
 
-        for(i = 0; i < 5; i++){
-            playRound(getHumanChoice(), getComputerChoice());
-        }
+        const rock = document.createElement("button");
+        rock.textContent = 'Rock';
+        const paper = document.createElement("button");
+        paper.textContent = 'Paper';
+        const scissors = document.createElement("button");
+        scissors.textContent = 'Scissors';
 
-        if(humanScore == computerScore){
-            console.log("The Game Is Tie!");
-        }else if(humanScore > computerScore){
-            console.log("!Congratulations! You Won The Game!");
-        }else{
-            console.log("Hard Luck You Lost The Game!");
-        }
+        let result = document.createElement("div");
+        result.textContent = `Result`;
 
-        };
-        playGame();
+        let pS = document.createElement("div");
+        
+
+        let cS = document.createElement("div");
+        
+
+        result.appendChild(pS);
+        result.appendChild(cS);
+
+        rock.addEventListener('click', () => {
+            const playerChoice = 'rock';
+            playRound(playerChoice, getComputerChoice());
+            pS.textContent = `Player Score: ${humanScore}`;
+            cS.textContent = `Computer Score: ${computerScore}`;
+        });
+
+        paper.addEventListener('click', () => {
+            const playerChoice = 'paper';
+            playRound(playerChoice, getComputerChoice());
+            pS.textContent = `Player Score: ${humanScore}`;
+            cS.textContent = `Computer Score: ${computerScore}`;
+        });
+
+        scissors.addEventListener('click', () => {
+            const playerChoice = 'scissors';
+            playRound(playerChoice, getComputerChoice());
+            pS.textContent = `Player Score: ${humanScore}`;
+            cS.textContent = `Computer Score: ${computerScore}`;
+        });
+
+        document.body.appendChild(rock);
+        document.body.appendChild(paper);
+        document.body.appendChild(scissors);
+        document.body.appendChild(result);
+
+        
+
     </script>
 </body>
 </html>
